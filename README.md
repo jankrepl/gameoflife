@@ -4,7 +4,25 @@ Minimal python implementation of Game of Life using PyGame for visualization.
 # Demo
 ![](https://github.com/jankrepl/gameoflife/blob/master/images/demo.gif)
 
+
 # Usage
+1. Clone
+```sh
+git clone https://github.com/jankrepl/gameoflife.git
+cd gameoflife
+```
+
+2. Install via `setup.py`
+```sh
+pip install .
+```
+
+3. Run via CLI
+```sh
+gol
+```
+
+# Development
 1. Clone
 ```sh
 git clone https://github.com/jankrepl/gameoflife.git
@@ -33,13 +51,13 @@ pip install -r requirements.txt
 - [x] Flake8
 - [ ] List all CLI options in README
 - [ ] Somehow store interesting initial configurations
-- [ ] Add nice gif
+- [x] Add nice gif
 - [x] Set up travis
 - [ ] Write some tests
 - [ ] Include generation number in a small window somewhere
 - [ ] Include Pause button
 - [ ] Include Restart button
-- [ ] Turn into a package and create a CLI entry point
+- [x] Turn into a package and create a CLI entry point
 
 # References
 * [Conway's Game of Life (wiki)](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
