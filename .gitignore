@@ -1,6 +1,7 @@
 experiments.py
 pg.py
 *demo.mov
+.checker.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

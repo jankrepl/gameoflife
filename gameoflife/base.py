@@ -1,12 +1,12 @@
 import numpy as np
 import pygame
-import time
 
 pygame.init()
 
 BACKGROUND_COLOR = (0, 0, 0)
 ALIVE_COLOR = (0, 255, 0)
 DEAD_COLOR = (255, 0, 0)
+
 
 class BackEnd:
 
@@ -20,7 +20,7 @@ class BackEnd:
 
     def initial_configuration(self, initial_list):
         """Initialize the grid with an initial structure.
-        
+
         Parameters
         ----------
         initial_list : list[tuple]
@@ -29,22 +29,20 @@ class BackEnd:
         xy_tuple = tuple(zip(*initial_list))
         self.grid[xy_tuple] = True
 
-
     def evolve(self):
         """Given the current grid state, evolve."""
-
 
         grid_num = self.grid.astype(int)
 
         # Assume that all cells on the boundaries (row/column end) will die
-
         neighbours_alive = np.zeros((self.height, self.width))
 
-        neighbours_alive[1:-1, 1:-1] = (grid_num[:-2,:-2]  + grid_num[:-2,1:-1] + grid_num[:-2,2:] +
-                        grid_num[1:-1,:-2] +                grid_num[1:-1,2:]  +
-                        grid_num[2:,:-2]   + grid_num[2:,1:-1]  + grid_num[2:,2:])
+        neighbours_alive[1:-1, 1:-1] = (grid_num[:-2, :-2] + grid_num[:-2, 1:-1] + grid_num[:-2, 2:] +
+                                        grid_num[1:-1, :-2] + grid_num[1:-1, 2:] + grid_num[2:, :-2] +
+                                        grid_num[2:, 1:-1] + grid_num[2:, 2:])
 
-        self.grid = np.logical_or(np.logical_and(self.grid, np.logical_or(neighbours_alive == 2, neighbours_alive == 3)),
+        self.grid = np.logical_or(np.logical_and(self.grid, np.logical_or(neighbours_alive == 2,
+                                                                          neighbours_alive == 3)),
                                   np.logical_and(~self.grid, neighbours_alive == 3))
 
     def __str__(self):
@@ -62,11 +60,8 @@ class Game:
         self.screen_width = width * (cell_size + gap) - gap
         self.screen_height = height * (cell_size + gap) - gap
 
-
         # Instantiate inner attributes
         self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
-
-
         self.backend = BackEnd(height=self.height, width=self.width)
 
     def __repr__(self):
@@ -75,7 +70,7 @@ class Game:
     def play(self, init_method='random'):
 
         if init_method == 'random':
-        # Generate random initial setup
+            # Generate random initial setup
             n_initial = (self.width * self.height) // 3  # cca 1/3 of all cells alive
             initial_list_x = np.random.randint(self.height, size=n_initial)
             initial_list_y = np.random.randint(self.width, size=n_initial)
@@ -111,4 +106,3 @@ class Game:
                 screen_c = c * (self.cell_size + self.gap) - self.gap
                 color = ALIVE_COLOR if self.backend.grid[r, c] else DEAD_COLOR
                 pygame.draw.rect(self.screen, color, [screen_c, screen_r, self.cell_size, self.cell_size])
-
