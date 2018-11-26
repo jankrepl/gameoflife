@@ -7,5 +7,6 @@ setup(name='gameoflife',
       author='Jan',
       license='MIT',
       packages=['gameoflife'],
-      entry_points={'console_scripts': ['gol = gameoflife.cli']}
+      entry_points={'console_scripts': ['gol = gameoflife.cli']},
+      install_requires=['numpy==1.15.4', 'pygame==1.9.4'],
       )

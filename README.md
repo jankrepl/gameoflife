@@ -12,12 +12,18 @@ git clone https://github.com/jankrepl/gameoflife.git
 cd gameoflife
 ```
 
-2. Install via `setup.py`
+2. Create virtual environment
+```sh
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install via `setup.py`
 ```sh
 pip install .
 ```
 
-3. Run via CLI
+4. Run via CLI
 ```sh
 gol
 ```
