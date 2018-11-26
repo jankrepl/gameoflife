@@ -33,6 +33,8 @@ pip install -r requirements.txt
 - [ ] Flake8
 - [ ] Somehow store interesting initial configurations
 - [ ] Add nice gif
+- [ ] Set up travis
+- [ ] Write some tests
 
 
 # References
