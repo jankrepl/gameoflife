@@ -87,7 +87,6 @@ class Game:
         # Instantiate inner attributes
         self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         self.font = pygame.font.SysFont(FONT_TYPE, (vertical_margin // 2))
-        print(self.font)
 
         self.backend = BackEnd(height=self.height, width=self.width)
 
@@ -116,7 +115,6 @@ class Game:
         initial_list = list(zip(initial_list_x, initial_list_y))
 
         self.backend.initial_configuration(initial_list)
-        print(np.sum(self.backend.grid) / n_overall)
 
         # Variables
         game_over = False  # game status indicator

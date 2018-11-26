@@ -16,8 +16,5 @@ args = parser.parse_args()
 game = Game(width=args.width,
             height=args.height)
 
-# Print the representation
-print(repr(game))
-
 # Play
 game.play(perc=args.perc)
