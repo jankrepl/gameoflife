@@ -39,6 +39,7 @@ pip install -r requirements.txt
 - [ ] Include generation number in a small window somewhere
 - [ ] Include Pause button
 - [ ] Include Restart button
+- [ ] Turn into a package and create a CLI entry point
 
 # References
 * [Conway's Game of Life (wiki)](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
