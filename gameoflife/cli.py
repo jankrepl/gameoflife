@@ -4,10 +4,11 @@ import argparse
 
 from gameoflife.base import Game
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-parser.add_argument('--width', type=int, default=50)
-parser.add_argument('--height', type=int, default=50)
+parser.add_argument('--width', type=int, default=75, help='Number of cell columns')
+parser.add_argument('--height', type=int, default=50, help='Number of cell rows')
+parser.add_argument('--perc', type=int, default=33, help='Percentage of cells that are alive at initialization')
 
 args = parser.parse_args()
 
@@ -19,4 +20,4 @@ game = Game(width=args.width,
 print(repr(game))
 
 # Play
-game.play()
+game.play(perc=args.perc)

@@ -21,43 +21,28 @@ pip install .
 ```sh
 gol
 ```
-
-# Development
-1. Clone
+See below optional arguments
 ```sh
-git clone https://github.com/jankrepl/gameoflife.git
-cd gameoflife
+usage: gol [-h] [--width WIDTH] [--height HEIGHT] [--perc PERC]
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --width WIDTH    Number of cell columns (default: 75)
+  --height HEIGHT  Number of cell rows (default: 50)
+  --perc PERC      Percentage of cells that are alive at initialization
+                   (default: 33)
 ```
 
-2. Add pwd to `PYTHONPATH`
-```sh
-export PYTHONPATH="${PWD}:${PYTHONPATH}"
-```
+# Controls
 
-3. Create virtual environment and install dependencies
-```sh
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+* <kbd>⎋ Escape</kbd> — Exit
+* <kbd>r</kbd> — Restart
+* <kbd>Space</kbd> — Pause
+* <kbd>s</kbd> — Single step (only active in Pause mode)
 
-4. Run via CLI
-```sh
-./gameoflife/cli.py
-```
 
 # TODO
-- [ ] Dialog window giving user the chance to select initialization method
-- [x] Flake8
-- [ ] List all CLI options in README
-- [ ] Somehow store interesting initial configurations
-- [x] Add nice gif
-- [x] Set up travis
-- [ ] Write some tests
-- [ ] Include generation number in a small window somewhere
-- [ ] Include Pause button
-- [ ] Include Restart button
-- [x] Turn into a package and create a CLI entry point
+- [ ] Better behavior around the borders (currently weird)
 
 # References
 * [Conway's Game of Life (wiki)](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
