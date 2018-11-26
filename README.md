@@ -1,6 +1,8 @@
 # Game of Life using PyGame
 Minimal python implementation of Game of Life using PyGame for visualization.
 
+# Demo
+![](https://github.com/jankrepl/gameoflife/blob/master/images/demo.gif)
 # Usage
 1. Clone
 ```sh
