@@ -31,11 +31,14 @@ pip install -r requirements.txt
 # TODO
 - [ ] Dialog window giving user the chance to select initialization method
 - [ ] Flake8
+- [ ] List all CLI options in README
 - [ ] Somehow store interesting initial configurations
 - [ ] Add nice gif
 - [ ] Set up travis
 - [ ] Write some tests
-
+- [ ] Include generation number in a small window somewhere
+- [ ] Include Pause button
+- [ ] Include Restart button
 
 # References
 * [Conway's Game of Life (wiki)](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
