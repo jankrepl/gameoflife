@@ -30,11 +30,11 @@ pip install -r requirements.txt
 
 # TODO
 - [ ] Dialog window giving user the chance to select initialization method
-- [ ] Flake8
+- [x] Flake8
 - [ ] List all CLI options in README
 - [ ] Somehow store interesting initial configurations
 - [ ] Add nice gif
-- [ ] Set up travis
+- [x] Set up travis
 - [ ] Write some tests
 - [ ] Include generation number in a small window somewhere
 - [ ] Include Pause button
